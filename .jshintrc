@@ -1,0 +1,8 @@
+{
+    "browser": true,
+    "expr": true,
+    "newcap": false,
+    "globals": { 
+        "Element": true
+    }
+}
