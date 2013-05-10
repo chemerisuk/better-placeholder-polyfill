@@ -6,7 +6,7 @@
  */
 DOM.supports("placeholder", "input") || DOM.extend("[placeholder]", {
     template: {
-        before: '<input type="text" style="box-sizing: border-box; position: absolute; color: graytext; background: transparent; border-color: transparent"/>'
+        before: "<input type='text' style='box-sizing: border-box; position: absolute; color: graytext; background: transparent; border-color: transparent'/>"
     },
     constructor: function() {
         var input = this,
@@ -14,7 +14,7 @@ DOM.supports("placeholder", "input") || DOM.extend("[placeholder]", {
             placeholder = input.prev();
 
         placeholder
-            .set("value", input.get("placeholder"))
+            .set(input.get("placeholder"))
             .setStyle("width", offset.right - offset.left)
             .on("focus", function() {
                 input.fire("focus");
@@ -25,10 +25,10 @@ DOM.supports("placeholder", "input") || DOM.extend("[placeholder]", {
                 placeholder.hide();
             },
             blur: function() {
-                if (!input.get("value")) placeholder.show();
+                if (!input.get()) placeholder.show();
             }
         });
 
-        if (input.get("value")) placeholder.hide();
+        if (input.get() || input.isFocused()) placeholder.hide();
     }
 });

@@ -1,8 +1,10 @@
 {
-    "browser": true,
-    "expr": true,
     "newcap": false,
+    "quotmark": "double",
+    "indent": 4,
+    "eqeqeq": true,
+    "expr": true,
     "globals": { 
-        "Element": true
+        "DOM": true
     }
 }
