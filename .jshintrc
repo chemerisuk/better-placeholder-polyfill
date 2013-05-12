@@ -4,6 +4,8 @@
     "indent": 4,
     "eqeqeq": true,
     "expr": true,
+    "undef": true,
+    "unused": true,
     "globals": { 
         "DOM": true
     }
