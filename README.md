@@ -22,4 +22,6 @@ Then append the following script on your page:
 </html>
 ```
 
-Demo - http://chemerisuk.github.io/better-placeholder-polyfill/
+Demo
+----
+http://chemerisuk.github.io/better-placeholder-polyfill/ (open in IE < 10)
