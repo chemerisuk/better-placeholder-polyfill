@@ -5,7 +5,7 @@
  * Copyright (c) 2013 Maksim Chemerisuk
  */
 DOM.supports("placeholder", "input") || DOM.extend("[placeholder]", {
-    before: "<input type='text' style='box-sizing: border-box; position: absolute; color: graytext; background: transparent; border-color: transparent'/>"
+    before: "<input type='text' style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent'/>"
 }, {
     constructor: function() {
         var input = this,
