@@ -15,19 +15,14 @@ DOM.supports("placeholder", "input") || DOM.extend("[placeholder]", {
         placeholder
             .set(input.get("placeholder"))
             .setStyle("width", offset.right - offset.left)
-            .on("click", function() {
-                input.fire("focus");
-            });
+            .on("click", input.fire, ["focus"], input);
 
-        input.on({
-            focus: function() {
-                placeholder.hide();
-            },
-            blur: function() {
-                if (!input.get()) placeholder.show();
-            }
-        });
+        input.on("focus", placeholder.hide, [], placeholder);
+        input.on("blur", input._showPlaceholder, [placeholder]);
 
         if (input.get() || input.isFocused()) placeholder.hide();
+    },
+    _showPlaceholder: function(placeholder) {
+        if (!this.get()) placeholder.show();
     }
 });
