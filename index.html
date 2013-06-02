@@ -1,36 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>better-placeholder demo</title>
-    <script src="components/better-dom/src/better-dom.js" data-htc="components/better-dom/src/better-dom.htc"></script>
+    <title>better-placeholder-polyfill demo</title>
+    <script src="components/lodash/lodash.js"></script>
+    <script src="components/better-dom/better-dom.js" data-htc="components/better-dom/better-dom.htc"></script>
     <script src="src/better-placeholder-polyfill.js"></script>
 </head>
 <body>
-    <script type="text/template">
-        <form>
-            <p>
-                <label>Your email<br>
-                    <input type="email" placeholder="my@email.com" name="email">
-                </label>
-            </p>
-            <p>
-                <label>Your password<br>
-                    <input type="password" placeholder="secret" name="password">
-                </label>
-            </p>
-            <p>
-                <label>Your comment<br>
-                    <textarea placeholder="say what you think..."></textarea>
-                </label>
-            </p>
-            <button type="submit">Submit</button>
-        </form>
-    </script>
-    <button onclick='DOM.find("body").append(DOM.find("body > script").get("innerHTML"))'>
-        append new form
-    </button>
     <form>
         <p>
             <label>Your email<br>
