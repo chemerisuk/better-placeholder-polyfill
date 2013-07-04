@@ -1,12 +1,34 @@
 {
-    "newcap": false,
+    "browser": true,
+    "onevar": true,
+
     "quotmark": "double",
     "indent": 4,
     "eqeqeq": true,
-    "expr": true,
     "undef": true,
+    "noarg": true,
+    "noempty": true,
+    "trailing": true,
+    "maxdepth": 4,
     "unused": true,
-    "globals": { 
-        "DOM": true
+    "immed": true,
+    "latedef": true,
+    "nonew": true,
+    
+    "globals": {
+        "module": true,
+        "require": true,
+        "define": true,
+
+        "beforeEach": true,
+        "afterEach": true,
+        "describe": true,
+        "it": true,
+        "expect": true,
+        "setFixtures": true,
+        "jasmine": true,
+        "waits": true,
+        "runs": true,
+        "spyOn": true
     }
 }
