@@ -1,7 +1,7 @@
 {
     "name": "better-placeholder-polyfill",
     "description": "[placeholder] polyfill for better-dom",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "main": [
         "src/better-placeholder-polyfill.js"
     ],
