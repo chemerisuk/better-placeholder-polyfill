@@ -16,6 +16,7 @@
     "nonew": true,
     
     "globals": {
+        "DOM": true,
         "module": true,
         "require": true,
         "define": true,
