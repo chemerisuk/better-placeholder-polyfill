@@ -1,18 +1,18 @@
 {
     "name": "better-placeholder-polyfill",
-    "description": "[placeholder] polyfill for better-dom",
     "version": "1.0.4",
     "main": [
-        "src/better-placeholder-polyfill.js"
+        "better-placeholder-polyfill.js"
+    ],
+    "ignore": [
+        ".*",
+        "src",
+        "test"
     ],
     "keywords": [
         "better-dom"
     ],
     "dependencies": {
-        "better-dom": "~1.0.0"
-    },
-    "ignore": [
-        "*.*",
-        "test"
-    ]
+        "better-dom": "~1.1.0"
+    }
 }

@@ -8,7 +8,7 @@ Use [bower](http://bower.io/) to download this extension with all required depen
 
     bower install better-placeholder-polyfill
 
-This will clone the latest version of the better-dateinput-polyfill into the `bower_components` directory at the root of your project.
+This will clone the latest version of the better-placeholder-polyfill into the `bower_components` directory at the root of your project.
 
 Then append the following script on your page:
 
@@ -17,7 +17,7 @@ Then append the following script on your page:
 <body>
     ...
     <script src="bower_components/better-dom/better-dom.js" data-htc="bower_components/better-dom/better-dom.htc"></script>
-    <script src="bower_components/better-placeholder-polyfill/src/better-placeholder-polyfill.js"></script>
+    <script src="bower_components/better-placeholder-polyfill/better-placeholder-polyfill.js"></script>
 </body>
 </html>
 ```
