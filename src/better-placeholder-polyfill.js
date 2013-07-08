@@ -12,7 +12,7 @@
     if (DOM.supports("placeholder", "input")) return;
 
     DOM.extend("[placeholder]", [
-        "input[style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent']"
+        "input[tabindex=-1 style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent']"
     ], {
         constructor: function(holder) {
             var offset = this.offset();

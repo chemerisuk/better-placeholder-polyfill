@@ -53,6 +53,7 @@ module.exports = function(grunt) {
             },
             updateBranches: {
                 command: [
+                    "git add -A",
                     // commit all changes
                     "git commit -am 'version <%= pkg.version %>'",
                     // checkout pages branch
