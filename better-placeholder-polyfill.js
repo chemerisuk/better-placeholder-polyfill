@@ -1,6 +1,10 @@
 /**
  * @file better-placeholder-polyfill
+<<<<<<< HEAD
  * @version 1.0.5 2013-07-08T10:42:09
+=======
+ * @version 1.0.5 2013-07-08T10:54:36
+>>>>>>> master
  * @overview [placeholder] polyfill for better-dom
  * @copyright Maksim Chemerisuk 2013
  * @license MIT
@@ -12,7 +16,11 @@
     if (DOM.supports("placeholder", "input")) return;
 
     DOM.extend("[placeholder]", [
+<<<<<<< HEAD
         "input[style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent']"
+=======
+        "input[tabindex=-1 style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent']"
+>>>>>>> master
     ], {
         constructor: function(holder) {
             var offset = this.offset();
