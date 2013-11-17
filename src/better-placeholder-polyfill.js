@@ -1,37 +1,25 @@
-/**
- * @file <%= pkg.name %>
- * @version <%= pkg.version %> <%= grunt.template.today('isoDateTime') %>
- * @overview <%= pkg.description %>
- * @copyright <%= pkg.author %> <%= grunt.template.today('yyyy') %>
- * @license <%= pkg.license %>
- * @see <%= pkg.repository.url %>
- */
 (function(DOM) {
     "use strict";
 
-    if (DOM.supports("placeholder", "input")) return;
+    if (typeof DOM.create("input").get("placeholder") === "string") return;
 
-    DOM.extend("[placeholder]", [
-        "input[tabindex=-1 style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent']"
-    ], {
-        constructor: function(holder) {
-            var offset = this.offset();
+    DOM.extend("[placeholder]", {
+        constructor: function() {
+            var holder = DOM.create("input[tabindex=-1 style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent'"),
+                offset = this.offset();
 
             this
-                .on("focus", holder, "hide")
-                .on("blur", this, "_showPlaceholder", [holder]);
+                .on("focus", function() { holder.hide() })
+                .on("blur", function() { if (!this.get()) holder.show() });
 
             holder
                 .set(this.get("placeholder"))
-                .setStyle("width", offset.right - offset.left)
-                .on("click", this, "fire", ["focus"]);
+                .style("width", offset.right - offset.left)
+                .on("click", this, function() { this.fire("focus") });
 
-            if (this.get() || this.isFocused()) holder.hide();
+            if (this.get() || this.matches(":focus")) holder.hide();
 
             this.before(holder);
-        },
-        _showPlaceholder: function(holder) {
-            if (!this.get()) holder.show();
         }
     });
 }(window.DOM));

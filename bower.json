@@ -2,7 +2,7 @@
     "name": "better-placeholder-polyfill",
     "version": "1.0.5",
     "main": [
-        "better-placeholder-polyfill.js"
+        "dist/better-placeholder-polyfill.js"
     ],
     "ignore": [
         ".*",
@@ -13,6 +13,6 @@
         "better-dom"
     ],
     "dependencies": {
-        "better-dom": "~1.1.0"
+        "better-dom": "~1.6.0"
     }
 }

@@ -2,8 +2,6 @@
 *.sublime-workspace
 node_modules
 bower_components
-dist
+build
 coverage
 *.log
-.grunt
-_SpecRunner.html

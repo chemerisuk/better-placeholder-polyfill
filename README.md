@@ -1,27 +1,37 @@
-better-placeholder-polyfill [![Build Status](https://api.travis-ci.org/chemerisuk/better-placeholder-polyfill.png?branch=master)](http://travis-ci.org/chemerisuk/better-placeholder-polyfill)
-===========================
-> `[placeholder]` polyfill for [better-dom](https://github.com/chemerisuk/better-dom)
+# better-placeholder-polyfill [![Build Status](https://api.travis-ci.org/chemerisuk/better-placeholder-polyfill.png?branch=master)](http://travis-ci.org/chemerisuk/better-placeholder-polyfill)
+> `input[type=time]` polyfill for [better-dom](https://github.com/chemerisuk/better-dom)
 
-Installing
-----------
+[LIVE DEMO](http://chemerisuk.github.io/better-placeholder-polyfill/) (open in IE < 10)
+
+## Installing
 Use [bower](http://bower.io/) to download this extension with all required dependencies.
 
-    bower install better-placeholder-polyfill
+    bower install better-placeholder-polyfill --save
 
-This will clone the latest version of the better-placeholder-polyfill into the `bower_components` directory at the root of your project.
+This will clone the latest version of the __better-placeholder-polyfill__ into the `bower_components` directory at the root of your project.
 
-Then append the following script on your page:
+Then append the following html elements on your page:
 
 ```html
 <html>
+<head>
+    ...
+    <!--[if IE]>
+        <link href="bower_components/better-dom/dist/better-dom.htc" rel="htc" />
+        <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+</head>
 <body>
     ...
-    <script src="bower_components/better-dom/better-dom.js" data-htc="bower_components/better-dom/better-dom.htc"></script>
-    <script src="bower_components/better-placeholder-polyfill/better-placeholder-polyfill.js"></script>
+    <script src="bower_components/better-dom/dist/better-dom.js"></script>
+    <script src="bower_components/better-placeholder-polyfill/dist/better-placeholder-polyfill.js"></script>
 </body>
 </html>
 ```
 
-Demo
-----
-http://chemerisuk.github.io/better-placeholder-polyfill/ (open in IE < 10)
+## Browser support
+* Chrome
+* Safari 4+
+* Firefox 16+
+* Opera 12.10+
+* IE8+
