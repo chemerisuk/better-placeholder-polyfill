@@ -5,7 +5,7 @@
 
     DOM.extend("[placeholder]", {
         constructor: function() {
-            var holder = DOM.create("input[tabindex=-1 style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent'"),
+            var holder = DOM.create("input[tabindex=-1 value='${v}' style='${css}']", {v: this.get("placeholder"), css: "box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent"}),
                 offset = this.offset();
 
             this
@@ -13,7 +13,6 @@
                 .on("blur", function() { if (!this.get()) holder.show() });
 
             holder
-                .set(this.get("placeholder"))
                 .style("width", offset.right - offset.left)
                 .on("click", this, function() { this.fire("focus") });
 
