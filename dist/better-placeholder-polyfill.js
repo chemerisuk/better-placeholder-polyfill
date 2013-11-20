@@ -1,6 +1,6 @@
 /**
- * @file better-placeholder-polyfill
- * @version 1.0.5 2013-07-08T10:54:36
+ * @file src/better-placeholder-polyfill.js
+ * @version 1.1.0-rc.1 2013-11-20T13:41:46
  * @overview [placeholder] polyfill for better-dom
  * @copyright Maksim Chemerisuk 2013
  * @license MIT
@@ -9,29 +9,24 @@
 (function(DOM) {
     "use strict";
 
-    if (DOM.supports("placeholder", "input")) return;
+    if (typeof DOM.create("input").get("placeholder") === "string") return;
 
-    DOM.extend("[placeholder]", [
-        "input[tabindex=-1 style='box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent']"
-    ], {
-        constructor: function(holder) {
-            var offset = this.offset();
+    DOM.extend("[placeholder]", {
+        constructor: function() {
+            var holder = DOM.create("input[tabindex=-1 value='${v}' style='${css}']", {v: this.get("placeholder"), css: "box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent"}),
+                offset = this.offset();
 
             this
-                .on("focus", holder, "hide")
-                .on("blur", this, "_showPlaceholder", [holder]);
+                .on("focus", function() { holder.hide() })
+                .on("blur", function() { if (!this.get()) holder.show() });
 
             holder
-                .set(this.get("placeholder"))
-                .setStyle("width", offset.right - offset.left)
-                .on("click", this, "fire", ["focus"]);
+                .style("width", offset.right - offset.left)
+                .on("click", this, function() { this.fire("focus") });
 
-            if (this.get() || this.isFocused()) holder.hide();
+            if (this.get() || this.matches(":focus")) holder.hide();
 
             this.before(holder);
-        },
-        _showPlaceholder: function(holder) {
-            if (!this.get()) holder.show();
         }
     });
 }(window.DOM));
