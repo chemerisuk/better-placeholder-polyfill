@@ -11,8 +11,5 @@
   ],
   "keywords": [
     "better-dom"
-  ],
-  "dependencies": {
-    "better-dom": "~1.6.0"
-  }
+  ]
 }
