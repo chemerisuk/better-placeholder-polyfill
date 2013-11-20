@@ -1,6 +1,6 @@
 /**
  * @file src/better-placeholder-polyfill.js
- * @version 1.1.0-rc.1 2013-11-20T13:41:46
+ * @version 1.1.0-rc.1 2013-11-20T13:45:41
  * @overview [placeholder] polyfill for better-dom
  * @copyright Maksim Chemerisuk 2013
  * @license MIT

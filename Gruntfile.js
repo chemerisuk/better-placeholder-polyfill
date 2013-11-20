@@ -47,8 +47,7 @@ module.exports = function(grunt) {
         grunt.task.run([
             "shell:bower",
             "test",
-            "github_publish:" + version,
-            "shell:bower"
+            "github_publish:" + version
         ]);
     });
 };
