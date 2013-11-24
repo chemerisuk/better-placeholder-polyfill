@@ -1,9 +1,8 @@
 {
     "name": "better-dom",
-    "title": "better-dom",
-    "version": "1.1.0",
+    "version": "1.6.0-rc.7",
     "author": "Maksim Chemerisuk",
-    "description": "Sandbox for DOM extensions",
+    "description": "Sandbox for living DOM extensions",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -19,15 +18,18 @@
         "grunt-contrib-copy": "0.4.1",
         "grunt-contrib-clean": "0.4.1",
         "grunt-contrib-connect": "0.3.0",
-        "grunt-contrib-requirejs": "0.4.1",
-        "grunt-contrib-jasmine": "0.5.1",
-        "grunt-template-jasmine-istanbul": "0.2.4",
-        "grunt-jsdoc": "0.3.3",
-        "grunt-karma": "0.4.4",
-        "grunt-shell": "0.2.2",
+        "grunt-shell": "0.3.1",
         "platform": "1.0.0",
         "benchmark": "1.0.0",
-        "lodash": "1.2.1"
+        "lodash": "1.2.1",
+        "grunt-jsdoc": "0.4.0",
+        "ink-docstrap": "~0.2",
+        "grunt-karma": "0.7.0",
+        "karma-coverage": "0.1.0",
+        "karma-firefox-launcher": "0.1.0",
+        "karma-safari-launcher": "0.1.1",
+        "karma-opera-launcher": "0.1.0",
+        "grunt-browserify": "~1.2.1"
     },
     "scripts": {
         "test": "grunt test"
