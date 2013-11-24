@@ -1,5 +1,5 @@
 # better-placeholder-polyfill [![Build Status](https://api.travis-ci.org/chemerisuk/better-placeholder-polyfill.png?branch=master)](http://travis-ci.org/chemerisuk/better-placeholder-polyfill)
-> `input[type=time]` polyfill for [better-dom](https://github.com/chemerisuk/better-dom)
+> `[placeholder]` polyfill for [better-dom](https://github.com/chemerisuk/better-dom)
 
 [LIVE DEMO](http://chemerisuk.github.io/better-placeholder-polyfill/) (open in IE < 10)
 
