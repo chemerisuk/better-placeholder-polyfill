@@ -15,7 +15,7 @@
                 .before(placeholder);
 
             placeholder
-                .on("click", this, this.onPlaceholderClick)
+                .on("mousedown", this, this.onPlaceholderClick)
                 .style({
                     width: this.width(),
                     font: this.style("font"),
@@ -34,6 +34,8 @@
         },
         onPlaceholderClick: function() {
             this.fire("focus");
+
+            return false;
         }
     });
 }(window.DOM));
