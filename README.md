@@ -3,6 +3,11 @@
 
 [LIVE DEMO](http://chemerisuk.github.io/better-placeholder-polyfill/) (open in IE < 10)
 
+## Features
+* [live extension](https://github.com/chemerisuk/better-dom/wiki/Live-extensions) - works for current and future content
+* works for any kind of input (no issues with password) and textarea
+* does nothing if native support exists
+
 ## Installing
 Use [bower](http://bower.io/) to download this extension with all required dependencies.
 

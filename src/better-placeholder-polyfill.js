@@ -7,7 +7,7 @@
 
     DOM.extend("[placeholder]", {
         constructor: function() {
-            var placeholder = DOM.create("input[tabindex=-1 value='${v}' style='${css}']", {v: this.get("placeholder"), css: "box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent"});
+            var placeholder = DOM.create("input[tabindex=-1 unselectable=on value=\"${v}\" style=\"${css}\"]", {v: this.get("placeholder"), css: "box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent"});
 
             this
                 .on({focus: this.onFocus, blur: this.onBlur})
@@ -15,8 +15,14 @@
                 .before(placeholder);
 
             placeholder
-                .style("width", this.width())
-                .on("click", this, this.onPlaceholderClick);
+                .on("mousedown", this, this.onPlaceholderClick)
+                .style({
+                    width: this.width(),
+                    font: this.style("font"),
+                    padding: this.style("padding"),
+                    "text-align": this.style("text-align"),
+                    "border-width": this.style("border-width")
+                });
 
             if (this.get() || this.matches(":focus")) placeholder.hide();
         },
@@ -28,6 +34,8 @@
         },
         onPlaceholderClick: function() {
             this.fire("focus");
+
+            return false;
         }
     });
 }(window.DOM));
