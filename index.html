@@ -10,6 +10,11 @@
 </head>
 <body>
     <form>
+         <p aria-hidden="true">
+            <label>Your full name<br>
+                <input type="text" placeholder="First Last" name="fullname" style="padding: 0px 14px; line-height: 38px; height: 38px">
+            </label>
+        </p>
         <p>
             <label>Your email<br>
                 <input type="email" placeholder="my@email.com" name="email" style="padding: 0px 14px; line-height: 38px; height: 38px">
@@ -26,6 +31,7 @@
             </label>
         </p>
         <button type="submit">Submit</button>
+        <button type="button" onclick="DOM.find('[name=fullname]').parent('p').show()">Show hidden</button>
     </form>
     <script src="bower_components/better-dom/dist/better-dom.js"></script>
     <script src="src/better-placeholder-polyfill.js"></script>
