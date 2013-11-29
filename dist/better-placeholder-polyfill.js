@@ -1,6 +1,6 @@
 /**
  * @file src/better-placeholder-polyfill.js
- * @version 1.1.0-rc.5 2013-11-29T02:53:10
+ * @version 1.1.0-rc.6 2013-11-29T23:36:42
  * @overview [placeholder] polyfill for better-dom
  * @copyright Maksim Chemerisuk 2013
  * @license MIT
@@ -25,8 +25,8 @@
             placeholder
                 .on("mousedown", this, this.onPlaceholderClick)
                 .style({
-                    width: this.width(),
-                    height: this.height(),
+                    width: this.style("width"),
+                    height: this.style("height"),
                     font: this.style("font"),
                     padding: this.style("padding"),
                     "text-align": this.style("text-align"),
