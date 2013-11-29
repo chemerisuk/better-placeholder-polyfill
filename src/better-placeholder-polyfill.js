@@ -17,8 +17,8 @@
             placeholder
                 .on("mousedown", this, this.onPlaceholderClick)
                 .style({
-                    width: this.width(),
-                    height: this.height(),
+                    width: this.style("width"),
+                    height: this.style("height"),
                     font: this.style("font"),
                     padding: this.style("padding"),
                     "text-align": this.style("text-align"),

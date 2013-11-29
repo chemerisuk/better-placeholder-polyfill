@@ -5,7 +5,7 @@
 
 ## Features
 * [live extension](https://github.com/chemerisuk/better-dom/wiki/Live-extensions) - works for current and future content
-* works for any kind of input (no issues with password) and textarea
+* supports any kind of input (no issues with password) and textarea
 * does nothing if native support exists
 
 ## Installing
