@@ -22,8 +22,8 @@ Then append the following html elements on your page:
 <head>
     ...
     <!--[if IE]>
-        <link href="bower_components/better-dom/dist/better-dom.htc" rel="htc" />
-        <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+        <link href="bower_components/better-dom/dist/better-dom-legacy.htc" rel="htc"/>
+        <script src="bower_components/better-dom/dist/better-dom-legacy.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -36,7 +36,7 @@ Then append the following html elements on your page:
 
 ## Browser support
 * Chrome
-* Safari 4+
+* Safari 6.0+
 * Firefox 16+
 * Opera 12.10+
 * IE8+
