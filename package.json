@@ -1,7 +1,7 @@
 {
   "name": "better-placeholder-polyfill",
   "description": "[placeholder] polyfill for better-dom",
-  "version": "1.1.0-rc.6",
+  "version": "1.1.0",
   "author": "Maksim Chemerisuk",
   "license": "MIT",
   "repository": {

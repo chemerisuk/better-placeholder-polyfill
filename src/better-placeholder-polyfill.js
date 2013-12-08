@@ -7,6 +7,8 @@
 
     DOM.extend("[placeholder]", {
         constructor: function() {
+            if (!this.matches("input,textarea")) return;
+
             var placeholder = DOM.create("input[tabindex=-1 unselectable=on value=\"${v}\" style=\"${css}\"]", {v: this.get("placeholder"), css: "box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent"});
 
             this
