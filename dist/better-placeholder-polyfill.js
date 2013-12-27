@@ -1,6 +1,6 @@
 /**
  * @file src/better-placeholder-polyfill.js
- * @version 1.1.0 2013-12-08T14:59:13
+ * @version 1.1.1 2013-12-27T08:46:08
  * @overview [placeholder] polyfill for better-dom
  * @copyright Maksim Chemerisuk 2013
  * @license MIT
@@ -11,8 +11,6 @@
 
     if (typeof DOM.create("input").get("placeholder") === "string") return;
 
-    var PLACEHOLDER_KEY = "input-placeholder";
-
     DOM.extend("[placeholder]", {
         constructor: function() {
             if (!this.matches("input,textarea")) return;
@@ -20,12 +18,12 @@
             var placeholder = DOM.create("input[tabindex=-1 unselectable=on value=\"${v}\" style=\"${css}\"]", {v: this.get("placeholder"), css: "box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent"});
 
             this
-                .on({focus: this.onFocus, blur: this.onBlur})
-                .data(PLACEHOLDER_KEY, placeholder)
+                .on("focus", this.onFocus.bind(this, placeholder))
+                .on("blur", this.onBlur.bind(this, placeholder))
                 .before(placeholder);
 
             placeholder
-                .on("mousedown", this, this.onPlaceholderClick)
+                .on("mousedown", this.onPlaceholderClick.bind(this))
                 .style({
                     width: this.style("width"),
                     height: this.style("height"),
@@ -37,11 +35,11 @@
 
             if (this.get() || this.matches(":focus")) placeholder.hide();
         },
-        onFocus: function() {
-            this.data(PLACEHOLDER_KEY).hide();
+        onFocus: function(placeholder) {
+            placeholder.hide();
         },
-        onBlur: function() {
-            if (!this.get()) this.data(PLACEHOLDER_KEY).show();
+        onBlur: function(placeholder) {
+            if (!this.get()) placeholder.show();
         },
         onPlaceholderClick: function() {
             this.fire("focus");
