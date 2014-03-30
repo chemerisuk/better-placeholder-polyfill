@@ -1,18 +1,22 @@
 {
   "name": "better-placeholder-polyfill",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "main": [
     "dist/better-placeholder-polyfill.js"
   ],
   "ignore": [
     ".*",
+    "test",
     "src",
-    "test"
+    "Gruntfile.js",
+    "package.json",
+    "bower.json",
+    "main.sublime-project"
   ],
   "keywords": [
     "better-dom"
   ],
   "dependencies": {
-    "better-dom": "~1.6.4"
+    "better-dom": "~1.7.4"
   }
 }

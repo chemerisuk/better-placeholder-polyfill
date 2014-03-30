@@ -1,5 +1,7 @@
-# better-placeholder-polyfill [![Build Status](https://api.travis-ci.org/chemerisuk/better-placeholder-polyfill.png?branch=master)](http://travis-ci.org/chemerisuk/better-placeholder-polyfill)
+# better-placeholder-polyfill [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]
 > `[placeholder]` polyfill for [better-dom](https://github.com/chemerisuk/better-dom)
+
+The `placeholder` attribute is quite useful and despite on "optional" sense in some UIs you have to include a polyfill that adds support in old browsers. The project implements consistent support for the `placeholder` attribute in browsers that do not handle it.
 
 [LIVE DEMO](http://chemerisuk.github.io/better-placeholder-polyfill/) (open in IE < 10)
 
@@ -11,7 +13,7 @@
 ## Installing
 Use [bower](http://bower.io/) to download this extension with all required dependencies.
 
-    bower install better-placeholder-polyfill --save
+    bower install better-placeholder-polyfill
 
 This will clone the latest version of the __better-placeholder-polyfill__ into the `bower_components` directory at the root of your project.
 
@@ -35,8 +37,20 @@ Then append the following html elements on your page:
 ```
 
 ## Browser support
+#### Desktop
 * Chrome
 * Safari 6.0+
 * Firefox 16+
 * Opera 12.10+
 * IE8+
+
+#### Mobile
+* iOS Safari 6+
+* Android 2.3+
+* Chrome for Android
+
+[travis-url]: http://travis-ci.org/chemerisuk/better-placeholder-polyfill
+[travis-image]: https://api.travis-ci.org/chemerisuk/better-placeholder-polyfill.png?branch=master
+
+[coveralls-url]: https://coveralls.io/r/chemerisuk/better-placeholder-polyfill
+[coveralls-image]: https://coveralls.io/repos/chemerisuk/better-placeholder-polyfill/badge.png?branch=master

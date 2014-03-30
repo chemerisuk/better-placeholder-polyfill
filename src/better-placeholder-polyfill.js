@@ -1,29 +1,21 @@
 (function(DOM) {
     "use strict";
 
-    if (typeof DOM.create("input").get("placeholder") === "string") return;
+    var supportsPlaceholder = typeof DOM.create("input").get("placeholder") === "string";
 
-    DOM.extend("[placeholder]", {
+    DOM.extend("[placeholder]", !supportsPlaceholder, {
         constructor: function() {
-            if (!this.matches("input,textarea")) return;
-
-            var placeholder = DOM.create("input[tabindex=-1 unselectable=on value=\"${v}\" style=\"${css}\"]", {v: this.get("placeholder"), css: "box-sizing: border-box; position: absolute; color: graytext; background: none no-repeat 0 0; border-color: transparent"});
+            var placeholder = DOM.create("input[tabindex=-1 unselectable=on class=better-placehoder value=`{0}`]", [this.get("placeholder")]);
 
             this
                 .on("focus", this.onFocus.bind(this, placeholder))
                 .on("blur", this.onBlur.bind(this, placeholder))
+                .set("_placeholder", placeholder)
                 .before(placeholder);
 
             placeholder
                 .on("mousedown", this.onPlaceholderClick.bind(this))
-                .style({
-                    width: this.style("width"),
-                    height: this.style("height"),
-                    font: this.style("font"),
-                    padding: this.style("padding"),
-                    "text-align": this.style("text-align"),
-                    "border-width": this.style("border-width")
-                });
+                .style(this.style(["width", "height", "font", "padding", "text-align", "border-width"]));
 
             if (this.get() || this.matches(":focus")) placeholder.hide();
         },
@@ -38,5 +30,13 @@
 
             return false;
         }
+    });
+
+    DOM.importStyles(".better-placehoder", {
+        "box-sizing": "border-box",
+        position: "absolute",
+        color: "graytext",
+        background: "none",
+        "border-color": "transparent"
     });
 }(window.DOM));
