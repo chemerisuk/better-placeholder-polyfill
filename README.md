@@ -1,7 +1,7 @@
 # better-placeholder-polyfill [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]
 > `[placeholder]` polyfill for [better-dom](https://github.com/chemerisuk/better-dom)
 
-The `placeholder` attribute is very useful and despite on "optional" sense in some UIs you have to include a polyfill that adds support in old browsers. The project adds consistent support for the `placeholder` attribute in IE < 10.
+The `placeholder` attribute is quite useful and despite on "optional" sense in some UIs you have to include a polyfill that adds support in old browsers. The project implements consistent support for the `placeholder` attribute in browsers that do not handle it.
 
 [LIVE DEMO](http://chemerisuk.github.io/better-placeholder-polyfill/) (open in IE < 10)
 
