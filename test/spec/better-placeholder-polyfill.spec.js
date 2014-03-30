@@ -5,7 +5,23 @@ describe("better-placeholder-polyfill", function() {
 
     beforeEach(function() {
         input = DOM.mock("input[placeholder='123']");
-        placeholder = DOM.mock();
+        placeholder = input.get("_placeholder");
+    });
+
+    it("should use placeholder value", function() {
+        expect(placeholder.get()).toBe("123");
+
+        input = DOM.mock("input[placeholder='some text']");
+        placeholder = input.get("_placeholder");
+
+        expect(placeholder.get()).toBe("some text");
+    });
+
+    it("should not display placeholder if value exists", function() {
+        input = DOM.mock("input[placeholder='123' value='some value']");
+        placeholder = input.get("_placeholder");
+
+        expect(placeholder.get("aria-hidden")).toBe("true");
     });
 
     it("should hide placeholder on focus", function() {

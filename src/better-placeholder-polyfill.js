@@ -5,11 +5,12 @@
 
     DOM.extend("[placeholder]", !supportsPlaceholder, {
         constructor: function() {
-            var placeholder = DOM.create("input[tabindex=-1 unselectable=on class=better-placehoder value=\"${v}\"]", {v: this.get("placeholder")});
+            var placeholder = DOM.create("input[tabindex=-1 unselectable=on class=better-placehoder value=`{0}`]", [this.get("placeholder")]);
 
             this
                 .on("focus", this.onFocus.bind(this, placeholder))
                 .on("blur", this.onBlur.bind(this, placeholder))
+                .set("_placeholder", placeholder)
                 .before(placeholder);
 
             placeholder
