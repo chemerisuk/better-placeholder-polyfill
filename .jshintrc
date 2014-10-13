@@ -19,19 +19,12 @@
 
     "globals": {
         "DOM": true,
-        "module": true,
-        "require": true,
-        "define": true,
-
         "beforeEach": true,
         "afterEach": true,
         "describe": true,
         "it": true,
         "expect": true,
-        "setFixtures": true,
         "jasmine": true,
-        "waits": true,
-        "runs": true,
         "spyOn": true
     }
 }

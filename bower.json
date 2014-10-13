@@ -8,15 +8,14 @@
     ".*",
     "test",
     "src",
-    "Gruntfile.js",
+    "index.html",
     "package.json",
-    "bower.json",
-    "main.sublime-project"
+    "bower.json"
   ],
   "keywords": [
     "better-dom"
   ],
   "dependencies": {
-    "better-dom": "~1.7.4"
+    "better-dom": "~2.0.0"
   }
 }
