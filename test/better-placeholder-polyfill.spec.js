@@ -1,9 +1,10 @@
 describe("better-placeholder-polyfill", function() {
     "use strict";
 
-    var input, placeholder;
+    var input, placeholder, defineSpy;
 
     beforeEach(function() {
+        defineSpy = spyOn(Object, "defineProperty");
         input = DOM.mock("input[placeholder=`123`]");
         placeholder = input.get("_placeholder");
     });

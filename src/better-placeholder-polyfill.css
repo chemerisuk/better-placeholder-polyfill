@@ -1,4 +1,5 @@
 .better-placehoder {
+    display: inline-block;
     box-sizing: border-box;
     position: absolute;
     color: graytext;
