@@ -30,9 +30,9 @@
             </label>
         </p>
         <button type="submit">Submit</button>
-        <button type="button" onclick="DOM.find('[name=fullname]').parent('p').show()">Show hidden</button>
+        <button type="button" onclick="DOM.find('[name=fullname]').closest('p').show()">Show hidden</button>
     </form>
     <script src="bower_components/better-dom/dist/better-dom.js"></script>
-    <script src="src/better-placeholder-polyfill.js"></script>
+    <script src="build/better-placeholder-polyfill.js"></script>
 </body>
 </html>
