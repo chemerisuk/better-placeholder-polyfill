@@ -1,4 +1,4 @@
-# better-placeholder-polyfill<br>[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Bower version][fury-image]][fury-url]
+# better-placeholder-polyfill<br>[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Bower version][bower-image]][bower-url]
 > `[placeholder]` polyfill for [better-dom](https://github.com/chemerisuk/better-dom)
 
 The `placeholder` attribute is quite useful and despite on "optional" sense in some UIs you have to include a polyfill that adds support in old browsers. The project implements consistent support for the `placeholder` attribute in browsers that do not handle it.
@@ -7,6 +7,7 @@ The `placeholder` attribute is quite useful and despite on "optional" sense in s
 
 ## Features
 * [live extension](https://github.com/chemerisuk/better-dom/wiki/Live-extensions) - works for current and future content
+* polyfills `placeholder` attribute
 * supports any kind of input (no issues with password) and textarea
 * does nothing if native support exists
 
@@ -43,6 +44,6 @@ Then append the following html elements on your page:
 [coveralls-url]: https://coveralls.io/r/chemerisuk/better-placeholder-polyfill
 [coveralls-image]: http://img.shields.io/coveralls/chemerisuk/better-placeholder-polyfill/master.svg
 
-[fury-url]: http://badge.fury.io/bo/better-placeholder-polyfill
-[fury-image]: https://badge.fury.io/bo/better-placeholder-polyfill.svg
+[bower-url]: https://github.com/chemerisuk/better-placeholder-polyfill
+[bower-image]: http://img.shields.io/bower/v/better-placeholder-polyfill.svg
 
