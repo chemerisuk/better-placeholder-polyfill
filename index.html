@@ -4,9 +4,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>better-placeholder-polyfill demo</title>
     <!--[if IE]>
-        <link href="bower_components/better-dom/dist/better-dom-legacy.htc" rel="htc"/>
         <script src="bower_components/better-dom/dist/better-dom-legacy.js"></script>
     <![endif]-->
+    <style>
+    input, textarea {
+        width: 200px;
+    }
+    </style>
 </head>
 <body>
     <form>
@@ -31,9 +35,9 @@
             </label>
         </p>
         <button type="submit">Submit</button>
-        <button type="button" onclick="DOM.find('[name=fullname]').parent('p').show()">Show hidden</button>
+        <button type="button" onclick="DOM.find('[name=fullname]').closest('p').show()">Show hidden</button>
     </form>
     <script src="bower_components/better-dom/dist/better-dom.js"></script>
-    <script src="src/better-placeholder-polyfill.js"></script>
+    <script src="build/better-placeholder-polyfill.js"></script>
 </body>
 </html>
