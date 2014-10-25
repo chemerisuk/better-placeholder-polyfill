@@ -18,34 +18,33 @@ describe("better-placeholder-polyfill", function() {
         expect(placeholder.get()).toBe("some text");
     });
 
-    it("should not display placeholder if value exists", function() {
+    it("displays placeholder if value exists", function() {
         input = DOM.mock("input[placeholder=`123` value=`some value`]");
         placeholder = input.get("_placeholder");
 
         expect(placeholder.get("aria-hidden")).toBe("true");
     });
 
-    it("should hide placeholder on focus", function() {
-        var spy = spyOn(placeholder, "hide");
+    it("shows placeholder on blur when value is empty", function() {
+        var placeholder = DOM.mock("span.placeholder");
 
         input.onFocus(placeholder);
-        expect(spy).toHaveBeenCalled();
+        expect(placeholder.css("display")).toBe("none");
+
+        input.onBlur(placeholder);
+        expect(placeholder.css("display")).not.toBe("none");
     });
 
-    it("should show placeholder on blur when value is empty", function() {
-        var spy = spyOn(placeholder, "show"),
-            getSpy = spyOn(input, "get").and.returnValue("123");
+    it("does not show placeholder if input has a value", function() {
+        var placeholder = DOM.mock("span.placeholder");
+
+        input.onFocus(placeholder);
+        expect(placeholder.css("display")).toBe("none");
+
+        input.set("123");
 
         input.onBlur(placeholder);
-        expect(getSpy).toHaveBeenCalled();
-        expect(spy).not.toHaveBeenCalled();
-
-        getSpy.and.returnValue("");
-        getSpy.calls.reset();
-
-        input.onBlur(placeholder);
-        expect(getSpy).toHaveBeenCalled();
-        expect(spy).toHaveBeenCalled();
+        expect(placeholder.css("display")).toBe("none");
     });
 
     it("should focus on input when placeholder was clicked", function() {

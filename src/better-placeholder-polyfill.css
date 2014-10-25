@@ -4,5 +4,6 @@
     position: absolute;
     color: graytext;
     background: none;
-    border-color: transparent
+    border-color: transparent;
+    border-style: solid;
 }
