@@ -9,12 +9,12 @@
 
             placeholder
                 .css(this.css(["width", "height", "font", "padding", "text-align", "border-width"]))
-                .on("mousedown", this.onPlaceholderClick);
+                .on("mousedown", this.onPlaceholderClick)
+                .set(this.get("placeholder"));
 
             this
                 .on("focus", [placeholder], this.onFocus)
                 .on("blur", [placeholder], this.onBlur)
-                .set("_placeholder", placeholder)
                 .before(placeholder);
 
             if (this.get() || this.matches(":focus")) {
