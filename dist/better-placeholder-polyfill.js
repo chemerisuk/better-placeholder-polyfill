@@ -1,37 +1,49 @@
 /**
- * @file src/better-placeholder-polyfill.js
- * @version 1.2.0 2014-03-30T16:05:22
- * @overview [placeholder] polyfill for better-dom
- * @copyright Maksim Chemerisuk 2014
+ * better-placeholder-polyfill: [placeholder] polyfill for better-dom
+ * @version 1.3.0 Sat, 25 Oct 2014 21:05:59 GMT
+ * @link https://github.com/chemerisuk/better-placeholder-polyfill
+ * @copyright 2014 Maksim Chemerisuk
  * @license MIT
- * @see https://github.com/chemerisuk/better-placeholder-polyfill
  */
 (function(DOM) {
     "use strict";
 
-    var supportsPlaceholder = typeof DOM.create("input").get("placeholder") === "string";
+    var placeholder = DOM.create("input").get("placeholder");
 
-    DOM.extend("[placeholder]", !supportsPlaceholder, {
+    DOM.extend("[placeholder]", typeof placeholder !== "string", {
         constructor: function() {
-            var placeholder = DOM.create("input[tabindex=-1 unselectable=on class=better-placehoder value=`{0}`]", [this.get("placeholder")]);
-
-            this
-                .on("focus", this.onFocus.bind(this, placeholder))
-                .on("blur", this.onBlur.bind(this, placeholder))
-                .set("_placeholder", placeholder)
-                .before(placeholder);
+            var placeholder = DOM.create("span.better-placehoder[unselectable=on aria-hidden=true]");
 
             placeholder
-                .on("mousedown", this.onPlaceholderClick.bind(this))
-                .style(this.style(["width", "height", "font", "padding", "text-align", "border-width"]));
+                .css(this.css(["width", "height", "font", "padding", "text-align", "border-width"]))
+                .on("mousedown", this.onPlaceholderClick)
+                .set(this.get("placeholder"));
 
-            if (this.get() || this.matches(":focus")) placeholder.hide();
+            this
+                .on("focus", [placeholder], this.onFocus)
+                .on("blur", [placeholder], this.onBlur)
+                .before(placeholder);
+
+            if (this.get() || this.matches(":focus")) {
+                placeholder.css("display", "none");
+            }
+
+            this.defineAttribute("placeholder", {
+                get: function()  {return placeholder.get()},
+                set: function(value)  {
+                    placeholder.set(value);
+
+                    return value;
+                }
+            });
         },
         onFocus: function(placeholder) {
-            placeholder.hide();
+            placeholder.css("display", "none");
         },
         onBlur: function(placeholder) {
-            if (!this.get()) placeholder.show();
+            if (!this.get()) {
+                placeholder.css("display", "");
+            }
         },
         onPlaceholderClick: function() {
             this.fire("focus");
@@ -39,12 +51,6 @@
             return false;
         }
     });
-
-    DOM.importStyles(".better-placehoder", {
-        "box-sizing": "border-box",
-        position: "absolute",
-        color: "graytext",
-        background: "none",
-        "border-color": "transparent"
-    });
 }(window.DOM));
+
+DOM.importStyles(".better-placehoder", "display:inline-block;box-sizing:border-box;position:absolute;color:graytext;background:none;border-color:transparent;border-style:solid");
