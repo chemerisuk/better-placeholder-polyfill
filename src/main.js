@@ -20,7 +20,7 @@
                 .on("blur", this._blurInput.bind(this, placeholder))
                 .before(placeholder);
 
-            if (this.get() || this.matches(":focus")) {
+            if (this.value() || this.matches(":focus")) {
                 placeholder.css("display", "none");
             }
 
@@ -37,7 +37,7 @@
             placeholder.css("display", "none");
         },
         _blurInput(placeholder) {
-            if (!this.get()) {
+            if (!this.value()) {
                 placeholder.css("display", "");
             }
         },
